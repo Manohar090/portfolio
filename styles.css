@@ -1,7 +1,7 @@
 /* General Reset */
 @font-face {
   font-family: 'Rustico';
-  src: url('./fonts/Benguiat\ Bold.ttf') format('truetype'); /* Adjust the path based on your file structure */
+  src: url('../portfolio/fonts/Benguiat\ Bold.ttf') format('truetype'); /* Adjust the path based on your file structure */
 }
 * {
   margin: 0;
@@ -565,7 +565,7 @@ ul {
   padding: 5rem 1.5rem;
   background-color: #121212;
 }
-/* Updated Projects Section Styling with Orange Theme */
+
 .projects-grid {
   display: flex;
   flex-direction: column;
@@ -576,18 +576,19 @@ ul {
 }
 
 .project-card {
-  background: var(--card-bg);
-  border: 1px solid #ff6b00; /* Orange border */
+  background: rgba(36, 36, 36, 0.95);
+  border: 1px solid #ff6b00;
   box-shadow: 0 0 20px rgba(255, 107, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s ease;
+  animation: orangeGlow 2s infinite;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 0 30px rgba(255, 107, 0, 0.3);
-  border-color: #ff9340; /* Lighter orange on hover */
+  border-color: #ff9340;
 }
 
 .project-card .container {
@@ -604,15 +605,16 @@ ul {
 
 .project-card h3 {
   font-size: 2rem;
-  color: #ff6b00; /* Orange text */
+  color: #ff6b00;
   margin: 0 0 1.5rem 0;
   text-shadow: 0 0 10px rgba(255, 107, 0, 0.7);
+  text-align: left;
 }
 
 .project-card p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: var(--text-color);
+  color: #fff;
   margin-bottom: 1.5rem;
 }
 
@@ -626,19 +628,19 @@ ul {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: #fff;
 }
 
 .project-card ul li::before {
   content: '■';
-  color: #ff6b00; /* Orange bullet points */
+  color: #ff6b00;
   margin-right: 10px;
   text-shadow: 0 0 5px rgba(255, 107, 0, 0.7);
 }
 
 .project-card .image-content {
   flex: 1;
-  border: 2px solid #ff6b00; /* Orange border */
+  border: 2px solid #ff6b00;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(255, 107, 0, 0.2);
@@ -650,92 +652,110 @@ ul {
   transform: scale(1.02);
 }
 
-.project-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+/* Project-specific styles */
+/* Project 1 (Space Adventure) - Video */
+.project-card:nth-child(1) .image-content video {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
 }
 
-.project-card a {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(45deg, #ff6b00, #ff9340); /* Orange gradient */
-  color: var(--text-color);
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  border: 1px solid #ff6b00;
-  box-shadow: 0 0 10px rgba(255, 107, 0, 0.2);
+/* Project 2 (3D Mini City) - Video */
+.project-card:nth-child(2) .image-content video {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
 }
 
-.project-card a:hover {
-  background: linear-gradient(45deg, #ff9340, #ff6b00); /* Reversed gradient on hover */
-  transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(255, 107, 0, 0.4);
+/* Project 3 (Technophilia Mayavi) - Image */
+.project-card:nth-child(3) .image-content {
+    width: 400px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-/* Animation for the neon effect */
-@keyframes orangeGlow {
-  0% {
-      box-shadow: 0 0 10px rgba(255, 107, 0, 0.2);
-  }
-  50% {
-      box-shadow: 0 0 20px rgba(255, 107, 0, 0.4);
-  }
-  100% {
-      box-shadow: 0 0 10px rgba(255, 107, 0, 0.2);
-  }
+.project-card:nth-child(3) .image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* This ensures the image maintains its aspect ratio */
+    display: block;
 }
 
-.project-card {
-  animation: orangeGlow 2s infinite;
-}
-
-/* Responsive Design for Projects */
+/* Responsive Design Updates */
 @media (max-width: 992px) {
-  .project-card .container {
-      flex-direction: column;
-  }
+    .project-card .container {
+        flex-direction: column;
+    }
 
-  .project-card .text-content {
-      max-width: 100%;
-  }
+    .project-card .text-content {
+        max-width: 100%;
+    }
 
-  .project-card .image-content {
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-  }
+    .project-card .image-content {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Project 1 & 2 responsive (videos) */
+    .project-card:nth-child(1) .image-content video,
+    .project-card:nth-child(2) .image-content video {
+        height: 350px;
+    }
+
+    /* Project 3 responsive (image) */
+    .project-card:nth-child(3) .image-content {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2/3; /* Maintains the original 400:600 ratio */
+        max-width: 400px;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 768px) {
-  .project-card {
-      padding: 1rem;
-  }
+    .project-card h3 {
+        font-size: 1.5rem;
+    }
 
-  .project-card h3 {
-      font-size: 1.5rem;
-  }
+    .project-card p {
+        font-size: 1rem;
+    }
 
-  .project-card p {
-      font-size: 1rem;
-  }
+    /* Project 1 & 2 responsive (videos) */
+    .project-card:nth-child(1) .image-content video,
+    .project-card:nth-child(2) .image-content video {
+        height: 300px;
+    }
+
+    /* Project 3 responsive (image) */
+    .project-card:nth-child(3) .image-content {
+        max-width: 350px;
+    }
 }
 
-@media (max-width: 768px) {
-  .project-card {
-      padding: 1rem;
-  }
+@media (max-width: 480px) {
+    .project-card .container {
+        padding: 1rem;
+    }
 
-  .project-card h3 {
-      font-size: 1.5rem;
-  }
+    /* Project 1 & 2 responsive (videos) */
+    .project-card:nth-child(1) .image-content video,
+    .project-card:nth-child(2) .image-content video {
+        height: 250px;
+    }
 
-  .project-card p {
-      font-size: 1rem;
-  }
+    /* Project 3 responsive (image) */
+    .project-card:nth-child(3) .image-content {
+        max-width: 300px;
+    }
 }
 /* Contact Section */
 /* General Styling for Dark Theme */
