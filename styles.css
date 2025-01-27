@@ -1,7 +1,7 @@
 /* General Reset */
 @font-face {
   font-family: 'Rustico';
-  src: url('../fonts/') format('truetype'); /* Adjust the path based on your file structure */
+    src: url('./fonts/Stranger\ Things\ Outlined.ttf') format('truetype');
 }
 * {
   margin: 0;
