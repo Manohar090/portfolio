@@ -1,7 +1,7 @@
 /* General Reset */
 @font-face {
   font-family: 'Rustico';
-  src: url('../portfolio/fonts/Benguiat\ Bold.ttf') format('truetype'); /* Adjust the path based on your file structure */
+  src: url('../fonts/') format('truetype'); /* Adjust the path based on your file structure */
 }
 * {
   margin: 0;
